@@ -11,19 +11,16 @@ function editNav() {
 const modalbg = document.querySelector(".bground");
 const modalBtn = document.querySelectorAll(".modal-btn");
 const formData = document.querySelectorAll(".formData");
-const closeBtn =  document.querySelectorAll(".close")
+const closeBtn =  document.querySelectorAll(".close");
 
-// launch modal event
+// launch & close modal event
 modalBtn.forEach((btn) => btn.addEventListener('click', launchModal));
-// close modal event
 closeBtn.forEach((btn) => btn.addEventListener('click', closeModal));
 
-// launch modal form
+// launch & close modal form
 function launchModal() {
   modalbg.style.display = "block";
 }
-
-// close modal form
 function closeModal() {
   modalbg.style.display = "none";
 }
@@ -37,4 +34,5 @@ quantityErrorMsg.innerHTML = "Vous devez entrer un nombre.";
 radioErrorMsg.innerHTML = "Vous devez choisir une option.";
 checkboxErrorMsg.innerHTML = "Vous devez vérifier que vous acceptez les termes et conditions.";
 
-// commit message
+
+
