@@ -182,6 +182,33 @@ main {
   padding-top: 10px;
 }
 
+.modal-confirm{
+  display: none;
+  max-width: 30em;
+  animation-name: modalopen;
+  animation-duration: var(--modal-duration);
+  background: #232323;
+  border-radius: 10px;
+  color: #fff;
+  flex-direction: column;
+}
+
+.modal-confirm-message{
+  text-align: center;
+}
+
+.modal-confirm-btn{
+  background: #fe142f;
+  display: block;
+  margin: 0 auto;
+  border-radius: 7px;
+  font-size: 1rem;
+  padding: 12px 82px;
+  color: #fff;
+  cursor: pointer;
+  border: 0;
+}
+
 .modal-body {
   padding: 15px 8%;
   margin: 15px auto;
