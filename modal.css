@@ -27,6 +27,7 @@ p {
 
 img {
   padding-right: 1rem;
+  width: 10em;
 }
 
 .topnav {
@@ -73,9 +74,6 @@ img {
     float: right;
     display: block;
   }
-}
-
-@media screen and (max-width: 768px) {
   .topnav.responsive {position: relative;}
   .topnav.responsive .icon {
     position: absolute;
@@ -89,14 +87,25 @@ img {
   }
 }
 
-
-
  @media screen and (max-width: 540px) {
+  .topnav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
   .topnav a {display: none;}
   .topnav a.icon {
     float: right;
     display: block;
     margin-top: -15px;
+  }
+  .main-navbar{
+    display: flex;
+    flex-direction: column;
+  }
+  img {
+    padding-right: 1rem;
+    width: 8em;
   }
 } 
 
@@ -488,6 +497,7 @@ input[data-error]::after {
   height: 100%;
   display: block;
   padding: 0;
+  object-fit: cover;
 }
 .copyrights {
   color: #fe142f;
@@ -540,6 +550,28 @@ footer {
   .copyrights {
     margin-top: 50px;
     text-align: center;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .hero-headline{
+    font-size: 2.2em;
+    width: 6em;
+  }
+  .hero-text {
+    width: 13em;
+    font-size: 1.2rem;
+    margin-top: 1em;
+    padding: 0;
+  }
+  .copyrights{
+    font-size: 0.9rem;
+  }
+  .topnav.responsive .icon{
+    top: 38px;;
+  }
+  .main-navbar{
+    margin-top: 1em;
   }
 }
 
