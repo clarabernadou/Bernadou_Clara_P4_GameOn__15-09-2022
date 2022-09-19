@@ -209,8 +209,9 @@ function clearForm(){
 // submit & validate the form
 form.addEventListener('submit', function(e){
   e.preventDefault();
-  validate();
-  clearForm();
-  closeModal();
-  modalConfirmForm();
+  if(validate()){
+    clearForm();
+    closeModal();
+    modalConfirmForm();
+  }
 });
