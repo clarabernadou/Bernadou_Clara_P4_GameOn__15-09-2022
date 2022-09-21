@@ -192,6 +192,9 @@ function validate(){
 
   if(formValid){
     clearErrors();
+    clearForm();
+    modalConfirmForm();
+    closeModal();
   };
 }
 
@@ -209,9 +212,5 @@ function clearForm(){
 // submit & validate the form
 form.addEventListener('submit', function(e){
   e.preventDefault();
-  if(validate()){
-    clearForm();
-    closeModal();
-    modalConfirmForm();
-  }
+  validate()
 });
