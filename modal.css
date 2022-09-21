@@ -14,7 +14,6 @@ body {
   margin: 0;
   display: flex;
   flex-direction: column;
-  background-image: url("background.png");
   font-family: var(--font-default);
   font-size: 18px;
   max-width: 1300px;
@@ -28,11 +27,15 @@ p {
 
 img {
   padding-right: 1rem;
+  width: 10em;
 }
 
 .topnav {
   overflow: hidden;
   margin: 3.5%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 .header-logo {
     float: left;
@@ -74,9 +77,6 @@ img {
     float: right;
     display: block;
   }
-}
-
-@media screen and (max-width: 768px) {
   .topnav.responsive {position: relative;}
   .topnav.responsive .icon {
     position: absolute;
@@ -90,14 +90,25 @@ img {
   }
 }
 
-
-
  @media screen and (max-width: 540px) {
+  .topnav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
   .topnav a {display: none;}
   .topnav a.icon {
     float: right;
     display: block;
     margin-top: -15px;
+  }
+  .main-navbar{
+    display: flex;
+    flex-direction: column;
+  }
+  img {
+    padding-right: 1rem;
+    width: 8em;
   }
 } 
 
@@ -181,6 +192,33 @@ main {
   position: relative;
   color: #fff;
   padding-top: 10px;
+}
+
+.modal-confirm{
+  display: none;
+  max-width: 30em;
+  animation-name: modalopen;
+  animation-duration: var(--modal-duration);
+  background: #232323;
+  border-radius: 10px;
+  color: #fff;
+  flex-direction: column;
+}
+
+.modal-confirm-message{
+  text-align: center;
+}
+
+.modal-confirm-btn{
+  background: #fe142f;
+  display: block;
+  margin: 0 auto;
+  border-radius: 7px;
+  font-size: 1rem;
+  padding: 12px 82px;
+  color: #fff;
+  cursor: pointer;
+  border: 0;
 }
 
 .modal-body {
@@ -462,6 +500,7 @@ input[data-error]::after {
   height: 100%;
   display: block;
   padding: 0;
+  object-fit: cover;
 }
 .copyrights {
   color: #fe142f;
@@ -514,6 +553,29 @@ footer {
   .copyrights {
     margin-top: 50px;
     text-align: center;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .hero-headline{
+    font-size: 2.2em;
+  }
+  .hero-text {
+    font-size: 1.2rem;
+    margin-top: 1em;
+    padding: 0;
+  }
+  .hero-content{
+    min-width: 100%;
+  }
+  .copyrights{
+    font-size: 0.9rem;
+  }
+  .topnav.responsive .icon{
+    top: 38px;;
+  }
+  .main-navbar{
+    margin-top: 1em;
   }
 }
 
