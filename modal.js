@@ -33,6 +33,7 @@ function launchModal(){
   modalbg.style.display = "block";
   form.style.display = "block";
   confirmMsg.style.display = "none";
+  clearErrors();
 };
 function closeModal(){
   modalbg.style.display = "none";
@@ -192,6 +193,7 @@ function validate(){
   if(formValid){
     clearErrors();
     openConfirmMsg();
+    clearForm();
   };
 }
 
@@ -210,5 +212,4 @@ function clearForm(){
 form.addEventListener('submit', function(e){
   e.preventDefault();
   validate()
-  clearForm();
 });
