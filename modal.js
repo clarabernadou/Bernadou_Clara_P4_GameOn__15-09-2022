@@ -13,8 +13,7 @@ const modalBtn = document.querySelectorAll(".modal-btn");
 const formData = document.querySelectorAll(".formData");
 const closeBtn =  document.querySelectorAll(".close");
 const form = document.querySelector('form');
-const modalConfirm = document.querySelector('.modal-confirm');
-const modalConfirmClose = document.querySelector('.modal-confirm-btn');
+const confirmMsg = document.querySelector('.confirmMsg');
 
 const first = document.getElementById('first');
 const last = document.getElementById('last');
@@ -32,18 +31,18 @@ closeBtn.forEach((btn) => btn.addEventListener('click', closeModal));
 // launch & close modal form
 function launchModal(){
   modalbg.style.display = "block";
+  form.style.display = "block";
+  confirmMsg.style.display = "none";
 };
 function closeModal(){
   modalbg.style.display = "none";
 };
 
-// open & close the confirm modal
-function modalConfirmForm(){
-  modalConfirm.style.display = "flex";
+// launch the confirm message
+function openConfirmMsg(){
+  form.style.display = "none";
+  confirmMsg.style.display = "block";
 };
-modalConfirmClose.addEventListener('click', () => {
-  modalConfirm.style.display = "none";
-});
 
 // error messages
 const errorMsg = {
@@ -192,9 +191,7 @@ function validate(){
 
   if(formValid){
     clearErrors();
-    clearForm();
-    modalConfirmForm();
-    closeModal();
+    openConfirmMsg();
   };
 }
 
@@ -213,4 +210,5 @@ function clearForm(){
 form.addEventListener('submit', function(e){
   e.preventDefault();
   validate()
+  clearForm();
 });
