@@ -32,6 +32,7 @@ closeBtn.forEach((btn) => btn.addEventListener('click', closeModal));
 function launchModal(){
   modalbg.style.display = "block";
   form.style.display = "block";
+  confirmMsg.style.display = "none";
 };
 function closeModal(){
   modalbg.style.display = "none";
@@ -190,7 +191,6 @@ function validate(){
 
   if(formValid){
     clearErrors();
-    clearForm();
     openConfirmMsg();
   };
 }
@@ -210,4 +210,5 @@ function clearForm(){
 form.addEventListener('submit', function(e){
   e.preventDefault();
   validate()
+  clearForm();
 });
