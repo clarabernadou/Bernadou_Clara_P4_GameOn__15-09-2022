@@ -525,6 +525,9 @@ footer {
   .bground {
     top: 100px;
   }
+  .content{
+    margin: 1em auto 5em auto;
+  }
   .hero-section {
     display: block;
     box-shadow: unset;
