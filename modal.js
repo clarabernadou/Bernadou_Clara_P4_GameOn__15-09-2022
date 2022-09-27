@@ -12,6 +12,7 @@ const modalbg = document.querySelector(".bground");
 const modalBtn = document.querySelectorAll(".modal-btn");
 const formData = document.querySelectorAll(".formData");
 const closeBtn =  document.querySelectorAll(".close");
+const closeBtnMsg = document.querySelector(".btn-submit-close")
 const form = document.querySelector('form');
 const confirmMsg = document.querySelector('.confirmMsg');
 
@@ -27,12 +28,14 @@ const radio = document.querySelectorAll('input[name="location"]');
 // launch & close modal event
 modalBtn.forEach((btn) => btn.addEventListener('click', launchModal));
 closeBtn.forEach((btn) => btn.addEventListener('click', closeModal));
+closeBtnMsg.addEventListener('click', closeModalMsg);
 
 // launch & close modal form
 function launchModal(){
   modalbg.style.display = "block";
   form.style.display = "block";
   confirmMsg.style.display = "none";
+  closeBtnMsg.style.display = "none";
   clearErrors();
 };
 function closeModal(){
@@ -43,6 +46,16 @@ function closeModal(){
 function openConfirmMsg(){
   form.style.display = "none";
   confirmMsg.style.display = "block";
+};
+
+// Close the confirm message
+function closeModalMsg(){
+  modalbg.style.display = "none";
+};
+
+// launch the confirm message
+function openBtnMsg(){
+  closeBtnMsg.style.display = "block";
 };
 
 // error messages
@@ -193,6 +206,7 @@ function validate(){
   if(formValid){
     clearErrors();
     openConfirmMsg();
+    openBtnMsg();
     clearForm();
   };
 }
